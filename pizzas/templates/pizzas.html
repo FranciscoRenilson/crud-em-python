@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pizzas</title>
+</head>
+<body>
+    <ul>
+    {% for pizza in pizzas %}
+        <a href="{% url 'update_pizzas' pizza.id %}">  <!-- cria um loop na lista de produtos -->
+            <li>{{ pizza.description }}</li>  <!-- list item que listará as pizzas -->
+    </a>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_pizzas' %}">Nova pizza</a>
+</body>
+</html>
